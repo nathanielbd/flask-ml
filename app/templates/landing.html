@@ -1,3 +1,15 @@
-<!doctype html>
-<html lang="en">
-</html>
+{% extends "layout.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block head %}
+	{{ super() }}
+{% endblock %}
+{% block content %}
+	<h1>{{ title }}</h1>
+	<div class="formwrapper">
+		<h2>{{ form_name }}</h2>
+		<form method="POST" action="/results">
+			<div class="form-field">{{ form.param.label }} {{ form.param }}</div>
+			{{ form.submit }}
+		</form>
+	</div>
+{% endblock %}
