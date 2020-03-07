@@ -6,5 +6,5 @@ class ParametersForm(FlaskForm):
     param = StringField('Parameter_name', [DataRequired()])
     submit = SubmitField('Submit')
 
-class ProceedForm(FlaskFrom):
+class ProceedForm(FlaskForm):
     submit = SubmitField('Go')

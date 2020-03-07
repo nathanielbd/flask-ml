@@ -4,11 +4,15 @@
 	{{ super() }}
 {% endblock %}
 {% block content %}
-	<h1>{{ title }}</h1>
-	<div class="formwrapper">
-		<h2>{{ form_name }}</h2>
-		<form method="POST" action="/results">
-			<div class="form-field">{{ form.param.label }} {{ form.param }}</div>
+	<div class="jumbotron">
+		<h1 class="display-3">{{ title }}</h1>
+		<form method="POST">
+			<legend>{{ form_name }}</legend>
+			<div class="form-group">
+				{{ form.param.label }}:
+				<br>
+				{{ form.param }}
+			</div>
 			{{ form.submit }}
 		</form>
 	</div>

@@ -1,2 +1,2 @@
-def model(input):
+def fit(input):
     return input

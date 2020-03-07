@@ -3,7 +3,9 @@
 {% block head %}
 	{{ super() }}
 {% endblock %}
-{% block content %}
-	<h1>{{ title }}</h1>
-    <p>{{ output }}</p>
+{% block content %}	
+	<div class="jumbotron">
+		<h1 class="display-3">{{ title }}</h1>
+		<p class="lead">{{ output }}</p>	
+	</div>
 {% endblock %}
