@@ -6,7 +6,7 @@
 {% block content %}
 	<div class="jumbotron">
 		<h1 class="display-3">{{ title }}</h1>
-		<form method="POST">
+        <form action="{{ url_for('results') }}" method="POST">
 			<legend>{{ form_name }}</legend>
 			<div class="form-group">
 				{{ form.param.label }}:

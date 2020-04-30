@@ -7,21 +7,18 @@ app = Flask(__name__)
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/')
 def landing():
     title = 'Title'
     form = ParametersForm()
     form_name = 'Form name'
-    if request.method == 'POST':
-        data = request.form.get("param")
-        return redirect(url_for('results', data=data))
     return render_template('landing.html', title = title, form = form, form_name = form_name)
 
-@app.route('/results', methods=["GET", "POST"])
+@app.route('/results', methods=['POST'])
 def results():
     title = 'Results'
-    data = request.args.get("data")
-    output = fit(data)
+    param = request.form['param']
+    output = fit(param)
     return render_template('results.html', title = title, output = output)
 
 if __name__ == '__main__':
